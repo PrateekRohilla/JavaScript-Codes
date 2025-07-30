@@ -32,6 +32,15 @@ function fib(n){
     return fib(n-1) + fib(n-2);
 }
 
+function printArr(A, index = 0){
+    if(index >= A.length)
+        return;
+
+    console.log(A[index]);
+    index++;
+
+    printArr(A, index);
+}
 
 //NtimesRec(5);
 //NtimesRec2(5);
@@ -41,4 +50,6 @@ function fib(n){
 //let res = fib(7);
 //console.log(res);
 
+let arr = [1,4,7,12,24];
+printArr(arr);
 
