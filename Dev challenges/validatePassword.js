@@ -21,6 +21,26 @@ function validatePassword(password){
         return false;
 }
 
+/*
+regex explanation
+`^` start of the string
+`(?=.*[A-Z])`contains at least one uppercase letter
+`(?=.*[a-z])` contains at least one lowercase letter
+`(?=.*\d)` contains at least one digit
+`(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])` contains at least one special character
+`.{8,}` string must be at least 8 characters long
+`$` end of string
+*/
+//regex - one liner
+function validatePass(password) {
+    return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/.test(password);
+}
+
+
+
+
+
+
 let password = "83A49shd@#";
 
 if(validatePassword(password))
