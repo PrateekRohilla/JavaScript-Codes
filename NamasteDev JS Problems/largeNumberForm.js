@@ -1,13 +1,22 @@
 function largeNumberForm(arr){
 
-    let result;
-    let stringArr = [];
+    const nums = arr.map((num) => num.toString());
 
-    for(let i=0;i<arr.length;i++)
-        stringArr [i] = arr[i].toString();
+    //sort using custom comparator
+    nums.sort((a,b) =>{
+        return (b+a).localeCompare(a+b);
+    });
 
-    console.log(result);
+    //if all nums are 0
+    if(nums[0] === '0')
+        return '0';
+
+    return nums.join('');
+
 }
 
+
 let arr = [3,30,34,5,9];
-largeNumberForm(arr);
+
+let result = largeNumberForm(arr);
+console.log(result);
