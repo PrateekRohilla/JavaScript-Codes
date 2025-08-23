@@ -5,4 +5,7 @@ let interval = setInterval(() => {
     count++;
 }, 1000);
 
-
+setTimeout(() => {
+    clearInterval(interval);
+    console.log("Stopped after 10 seconds");
+}, 10000);
