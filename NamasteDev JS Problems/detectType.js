@@ -1,3 +1,8 @@
+/*
+- typeof works for number, string, boolean, undefined, object, function
+- for arrays also typeof returns object, to uniquely identify use Array.isArray() fn
+- for null check using strict type checking ===
+*/
 function detectType(data){
 
     if(data === null)
