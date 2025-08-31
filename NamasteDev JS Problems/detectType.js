@@ -1,26 +1,19 @@
 function detectType(data){
 
-    if(typeof data === 'string')
-        console.log('string')
+    if(data === null)
+        return 'null';
 
-    if(typeof data === 'number')
-        console.log('number')
+    if(Array.isArray(data))
+        return 'array';
 
-    if(typeof data === 'undefined')
-        console.log('undefined')
-
-    if(typeof data === 'object')
-        console.log('object')
-
-    //not working - boolean, null, fucntion, array(as obj not arr)
+    return typeof data;
 }
 
-detectType('hello')
-detectType(123)
-//detectType(true)
-detectType(undefined)
-detectType({})
-//detectType([])
-// detectType(null)
-//detectType(function() {})
-
+console.log(detectType('hello'));
+console.log(detectType(123));
+console.log(detectType(true));
+console.log(detectType(undefined));
+console.log(detectType({}));
+console.log(detectType([1,2,3]));
+console.log(detectType(null));
+console.log(detectType(function() {}));
