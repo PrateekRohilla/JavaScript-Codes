@@ -2,18 +2,19 @@
 /*
 trim for leading & trailig spaces
 regex - /\s+/ for removing extra middle spaces
+split will create arr of words
+need to do for every word - so used map
+at last join arr of words to sentence
 TC - O(n) | SC - O(n)
 */
+
 function capitalize(str){
 
-    let trimSpaces = str.trim();
-    let extraSpaces = trimSpaces.split(/\s+/);
-    let result = extraSpaces.join(' ')
-
-    return result;
-
-    //one liner
-    //return trimSpaces = str.trim().split(/\s+/).join(' ');
+    return str
+                .trim()
+                .split(/\s+/)
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
 }
 
 let str = '  hello        world     ';
