@@ -1,30 +1,23 @@
-//capitalize first letter of word & remove extra spaces
-
-function trimExtended(str){
-    let words = str.trim().split(/\s+/);
-    return words.join(' ');
-}
-
+//capitalize first letter of word & remove extra spaces(leading, trailing & extra middle spaces)
+/*
+trim for leading & trailig spaces
+regex - /\s+/ for removing extra middle spaces
+TC - O(n) | SC - O(n)
+*/
 function capitalize(str){
-    
-    let lowerStr = str.toLowerCase();
-    let firstLetter = str.charAt(0).toUpperCase();
-    let remainingStr = lowerStr.slice(1);
 
-    return firstLetter + remainingStr;
-}
+    let trimSpaces = str.trim();
+    let extraSpaces = trimSpaces.split(/\s+/);
+    let result = extraSpaces.join(' ')
 
-function capitalizeWord(str){
-    
-    let words = str.split('');
-    //console.log(words);
-    let capitals = words.map(word => capitalize(word));
+    return result;
 
-    let result = capitals.join('');
+    //one liner
+    //return trimSpaces = str.trim().split(/\s+/).join(' ');
 }
 
 let str = '  hello        world     ';
-let result = trimExtended(str);
+let result = capitalize(str);
 
 console.log(result);
 
