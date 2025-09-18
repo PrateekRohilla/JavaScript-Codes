@@ -46,23 +46,32 @@ function flatArrRec(arr, result = []) {
 
 //works for deep nestings
 //also changes sources array & changes elements order
-function flatOptimised(arr){
+function flatOptimised(arr) {
 
-  let result = [];
-  
-  for (let i = 0; i < arr.length; i++) {
-    
-    if (Array.isArray(arr[i])) {
-      arr.push(...arr[i]);
-    } 
-    else {
-      result.push(arr[i]);
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (Array.isArray(arr[i])) {
+            arr.push(...arr[i]);
+        }
+        else {
+            result.push(arr[i]);
+        }
     }
-  }
-  return result;
+    return result;
 
 }
 
+//minimal lines(use ternery) - may alter elements order
+function flatMinimal(arr) {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++)
+        (Array.isArray(arr[i])) ? arr.push(...arr[i]) : result.push(arr[i]);
+
+    return result;
+}
 
 
 
@@ -70,5 +79,5 @@ function flatOptimised(arr){
 let basicSol = flatArr(arr);
 let recursiveSol = flatArrRec(arr);
 let flat = flatOptimised(arr);
-console.log(flat);
-
+let minimalCode = flatMinimal(arr);
+console.log(minimalCode);
