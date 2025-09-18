@@ -1,24 +1,56 @@
+/*
+Problem - Flatten an Array
+I/P - ["a", "b", "b", ["a", "b", "c"], 1, 2, 3, [4], ["5", 6], "7", "d"]
+O/P - ['a', 'b', 'b', 'a', 'b', 'c', 1,   2,   3,   4, '5', 6,'7', 'd']
+*/
+
+let arr = [1, [2, [3, 4], 5], 6];
+
+
+//works upto 1 level of nesting
+let inbuiltSol = arr.flat();
+
 //Basic solution | works only one level of nesting
 function flatArr(arr) {
-    let resultArr = [];
+    let result = [];
     for (let i = 0; i < arr.length; i++) {
         if (Array.isArray(arr[i])) {
 
             for (let j = 0; j < arr[i].length; j++) {
-                resultArr.push(arr[i][j]);
+                result.push(arr[i][j]);
             }
 
         }
         else {
-            resultArr.push(arr[i]);
+            result.push(arr[i]);
         }
     }
 
-    return resultArr;
+    return result;
+}
+
+//recursive - will work for multiple nested array
+function flatArrRec(arr, result = []) {
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (Array.isArray(arr[i]))
+            flatArrRec(arr[i], result);
+
+        else
+            result.push(arr[i]);
+    }
+
+    return result;
 }
 
 
-let arr = [1, [2, [3, 4], 5], 6];
-let res = flatArr(arr);
-console.log(res);
+
+
+
+
+
+let basicSol = flatArr(arr);
+let recursiveSol = flatArrRec(arr);
+console.log(recursiveSol);
 
