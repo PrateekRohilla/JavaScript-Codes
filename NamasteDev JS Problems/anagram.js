@@ -1,5 +1,5 @@
 //JS way
-function isAnagram(){
+function isAnagram(str1, str2){
 
     if(str1.length != str2.length)
         return false;
@@ -53,4 +53,4 @@ function anagram2(str1, str2){
 let str1 = 'silent';
 let str2 = 'listen';
 
-console.log(anagram2(str1, str2));
+console.log(isAnagram(str1, str2));
