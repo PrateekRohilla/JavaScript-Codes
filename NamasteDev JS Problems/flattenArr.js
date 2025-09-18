@@ -44,7 +44,24 @@ function flatArrRec(arr, result = []) {
     return result;
 }
 
+//works for deep nestings
+//also changes sources array & changes elements order
+function flatOptimised(arr){
 
+  let result = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    if (Array.isArray(arr[i])) {
+      arr.push(...arr[i]);
+    } 
+    else {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+
+}
 
 
 
@@ -52,5 +69,6 @@ function flatArrRec(arr, result = []) {
 
 let basicSol = flatArr(arr);
 let recursiveSol = flatArrRec(arr);
-console.log(recursiveSol);
+let flat = flatOptimised(arr);
+console.log(flat);
 
