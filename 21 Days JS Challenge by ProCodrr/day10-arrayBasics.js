@@ -82,15 +82,95 @@ function evenOdd(arr){
 }
 
 
+//check if array is sorted
+function isSorted(arr){
+
+    for(let i=0;i<arr.length-1;i++)
+        if(arr[i+1] < arr[i])
+            return false;
+    
+
+    return true;
+}
+
+
+//remove duplicates from array
+function removeDuplicate(arr){
+    
+    let i=0;
+
+    for(let j=1;j<arr.length;j++){
+        if(arr[j] !== arr[i]){
+            i++;
+            arr[i] = arr[j];
+        }
+    }
+
+    return i+1;
+}
+
+
+//merge two arrays
+function merge(arr,arr2){
+
+    let merged = [];
+
+    let i = j = k = 0;
+    
+    while(i<arr.length && j<arr2.length){
+        if(arr[i] < arr2[j]){
+            merged[k] = arr[i];
+            i++
+        }
+        else{
+            merged[k] = arr2[j];
+            j++
+        }
+        k++;
+    }
+
+    while(i<arr.length){
+        merged[k] = arr[i]
+        i++,k++;
+    }
+
+    while(j<arr2.length){
+        merged[k] = arr2[j];
+        j++,k++;
+    }
+
+    return merged;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 let arr = [3,7,1,5,2];
 let arr2 = [1,5,2,7,3];
 let arr3 = [3,7,1,5,2];
+let arr4 = [2,5,8,8,90,100];
+let arr5 = [1,1,1,1,1,2,2,3,4,4,5,6];
+let A = [2,4,6,8];
+let B = [1,3,5,6,7,9,10];
+
 
 //console.log(minMax(arr));
 //console.log(revArr(arr));
 //console.log(secondLarge(arr));
 //console.log(checkEqual(arr,arr3));
 //console.log(evenOdd(arr));
+//console.log(isSorted(arr4));
+//console.log(removeDuplicate(arr5));
+//console.log(arr5);
+//console.log(merge(A,B));
