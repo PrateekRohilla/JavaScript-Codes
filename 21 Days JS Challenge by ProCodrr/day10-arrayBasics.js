@@ -143,12 +143,74 @@ function merge(arr,arr2){
 }
 
 
+//rotate array to right by K steps
+function rotateRight(arr,k){
+
+    let lastIndex = arr.length;
+
+    while(k--){
+
+        let last = arr[lastIndex-1];
+
+        for(let i=lastIndex-2;i>=0;i--){
+            arr[i+1] = arr[i];
+        }
+
+        arr[0] = last;
+    }
+
+    return arr;
+}
 
 
+//find unique pairs whose sum equals to target (arr is sorted)
+function uniquePairs(arr,target){
+
+    let s = 0, e = arr.length-1
+
+    while(s<e){
+
+        if(arr[s]+arr[e] == target){
+            console.log(arr[s],arr[e]);
+            s++,e--;
+        }
+
+        else if(arr[s]+arr[e] < target)
+            s++
+
+        else
+            e--;
+
+    }
+
+}
 
 
+//left shift array by one position
+function leftShift(arr){
+
+    let first = arr[0];
+    
+    for(let i=1;i<arr.length;i++)
+        arr[i-1] = arr[i];
+
+    arr[arr.length-1] = first;
+
+    return arr;
+}
 
 
+//count frequency of a element
+function countFrequency(arr, elem){
+
+    let count = 0;
+
+    for(let i=0;i<arr.length;i++)
+        if(arr[i] == elem)
+            count++;
+
+    return count;
+}
 
 
 
@@ -163,6 +225,7 @@ let arr4 = [2,5,8,8,90,100];
 let arr5 = [1,1,1,1,1,2,2,3,4,4,5,6];
 let A = [2,4,6,8];
 let B = [1,3,5,6,7,9,10];
+let C = [1,2,3,4,5];
 
 
 //console.log(minMax(arr));
@@ -174,3 +237,7 @@ let B = [1,3,5,6,7,9,10];
 //console.log(removeDuplicate(arr5));
 //console.log(arr5);
 //console.log(merge(A,B));
+//console.log(rotateRight(arr,3));
+//console.log(uniquePairs(C,6));
+//console.log(leftShift(arr4));
+//console.log(countFrequency(arr5,4));
