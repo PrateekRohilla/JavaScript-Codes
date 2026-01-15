@@ -27,7 +27,22 @@ function allIndex(arr, ele){
 }
 
 
+//find first string(in array of str) that starts with given char
+function firstSTR(arr, char){
+
+    for(let i=0;i<arr.length;i++){
+        if(arr[i][0] == char)
+            return arr[i];
+    }
+
+}
+
+
+
+
 
 
 let arr = [6,7,4,5,7,5,2,3,2,3,4,5,3];
-console.log(allIndex(arr,5));
+let strArray = ['apple', 'mango', 'banana', 'grapes'];
+//console.log(allIndex(arr,5));
+console.log(firstSTR(strArray, 'b'));
