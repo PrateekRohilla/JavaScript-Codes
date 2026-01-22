@@ -20,8 +20,24 @@ function print2(n){
     print2(n-1);
 }
 
+function factorial(n){
+
+    if(n == 0)
+        return 1;
+
+    return n * factorial(n-1);
+}
+
+function sumNumbers(n,sum=0){
+
+    if(n == 0)
+        return sum;
+
+    sum += n;
+
+    return sumNumbers(n-1,sum);
+}
 
 
 
-
-console.log(print2(5));
+console.log(sumNumbers(10));
