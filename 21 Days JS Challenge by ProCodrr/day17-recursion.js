@@ -38,6 +38,28 @@ function sumNumbers(n,sum=0){
     return sumNumbers(n-1,sum);
 }
 
+function reverseRecursion(n,rev=0){
+
+    if(n == 0)
+        return rev;
+
+    rev *= 10;
+    rev += n%10;
+    n = Math.floor(n/10)
+
+    return reverseRecursion(n,rev);
+}
+
+function palindrome(n){
+
+    let rev = reverseRecursion(n);
+
+    if(n == rev)
+        return true;
+
+    return false;
+}
 
 
-console.log(sumNumbers(10));
+//console.log(sumNumbers(10));
+console.log(palindrome(1221221));
