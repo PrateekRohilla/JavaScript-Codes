@@ -8,6 +8,7 @@ function print(n){
     
     console.log(n);
 }
+// O/P -> 1 2 3 4 5
 
 //tail recursion
 function print2(n){
@@ -19,6 +20,7 @@ function print2(n){
 
     print2(n-1);
 }
+// O/P -> 5 4 3 2 1
 
 function factorial(n){
 
@@ -62,4 +64,4 @@ function palindrome(n){
 
 
 //console.log(sumNumbers(10));
-console.log(palindrome(1221221));
+console.log(print2(5));
