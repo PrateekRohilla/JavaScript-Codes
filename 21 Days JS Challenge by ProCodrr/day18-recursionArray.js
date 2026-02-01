@@ -60,12 +60,25 @@ function findMax(arr, index = 0, max = -1){
     return findMax(arr, index, max)
 }
 
+//count number fo vowels in str
+function vowelsCount(str, index = 0, count = 0){
+
+    if(index >= str.length)
+        return count;
+
+    if('aeiou'.includes(str[index]))
+        count++;
+
+    return vowelsCount(str, index + 1, count);
+}
 
 
 
 
+let str = 'education';
 let arr = [1,2,4,5,5,7];
 let arr2 = [2,4,6,8,10];
 //console.log(isSorted(arr));
-console.log(findMax(arr2));
+//console.log(findMax(arr2));
+console.log(vowelsCount(str));
 
