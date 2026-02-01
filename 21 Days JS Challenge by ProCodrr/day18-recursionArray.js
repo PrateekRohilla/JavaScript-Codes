@@ -47,6 +47,18 @@ function allEven(arr, index = 0){
     return allEven(arr,index);
 }
 
+//find max in array
+function findMax(arr, index = 0, max = -1){
+
+    if(index >= arr.length)
+        return max;
+
+    if(arr[index] > max)
+        max = arr[index];
+
+    index++;
+    return findMax(arr, index, max)
+}
 
 
 
@@ -55,4 +67,5 @@ function allEven(arr, index = 0){
 let arr = [1,2,4,5,5,7];
 let arr2 = [2,4,6,8,10];
 //console.log(isSorted(arr));
-console.log(allEven(arr));
+console.log(findMax(arr2));
+
