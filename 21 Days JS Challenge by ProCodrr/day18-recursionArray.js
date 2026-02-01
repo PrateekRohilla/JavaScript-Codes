@@ -10,7 +10,49 @@ function printArr(arr, index = 0){
     return printArr(arr, index);
 }
 
+function sumArr(arr, index = 0, sum = 0){
+
+    if(index >= arr.length)
+        return sum;
+
+    sum += arr[index];
+    index++;
+
+    return sumArr(arr, index, sum);
+}
+
+function isSorted(arr, index = 0){
+
+    if(index >= arr.length-1)
+        return true;
+
+    if(arr[index] > arr[index+1])
+        return false;
+
+    index++;
+
+    return isSorted(arr, index);
+}
+
+//Check if All Elements in Array Are Even
+function allEven(arr, index = 0){
+
+    if(index >= arr.length)
+        return true;
+
+    if(arr[0]%2 !== 0)
+        return false;
+
+    index++;
+    return allEven(arr,index);
+}
 
 
-let arr = [1,2,3,4,5];
-console.log(printArr(arr));
+
+
+
+
+let arr = [1,2,4,5,5,7];
+let arr2 = [2,4,6,8,10];
+//console.log(isSorted(arr));
+console.log(allEven(arr));
