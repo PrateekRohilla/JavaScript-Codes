@@ -1,4 +1,4 @@
-//print all values in nested object - non recursive
+//print all values in nested object
 function objPrint(obj) {
     for (let key in obj) {
         if (typeof obj[key] === 'object' && obj[key] !== null)
@@ -9,9 +9,10 @@ function objPrint(obj) {
 
 }
 
-
-
-
+/*
+typeof null is object
+so also add condition check for null
+*/
 
 
 
